@@ -1,0 +1,248 @@
+@media screen and (max-width:480px){
+
+    [type="checkbox"]{
+        position: absolute;
+        height: 65px;
+        width: 65px;
+        z-index: 2;
+        top : 5px;
+        left: 15px;
+        opacity:0;
+    }
+
+    #span_hi{
+        position: absolute;
+        background-color: black;
+        height: 3.5px;
+        width: 65px;
+        top: 10px;
+        left: 15px;
+        z-index: 1;
+        box-shadow: 5px 3px 8px 2px rgba(0, 0, 0, 0.4);
+
+    }
+
+    #span_mid{
+        position: absolute;
+        background-color: black;
+        height: 3px;
+        width: 65px;
+        top: 35px;
+        left: 15px;
+        z-index: 1;
+        box-shadow: 5px 3px 8px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    #span_low{
+        position: absolute;
+        background-color: black;
+        height: 3px;
+        width: 65px;
+        top: 60px;
+        left: 15px;
+        z-index: 1;
+        box-shadow: 5px 3px 8px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    [type="checkbox"]:checked~#span_hi{
+        transition: transform 1s linear;
+        transform: translateY(25px) rotate(45deg);
+        transition-duration: .2s;
+    }
+
+    [type="checkbox"]:checked~#span_mid{
+        transition: transform 1s linear;
+        transform: scale(0);
+        transition-duration: .2s;
+    }
+
+    [type="checkbox"]:checked~#span_low{
+        transition: transform 1s linear;
+        transform: translateY(-25px) rotate(-45deg);
+        transition-duration: .2s;
+    }
+
+    [type="checkbox"]:not(checked)~#span_hi{
+        transition: transform 1s linear;
+        transform: translateY(0px) rotate(0deg);
+        transition-duration: .2s;
+    }
+
+    [type="checkbox"]:not(checked)~#span_mid{
+        transition: transform 1s linear;
+        transform: translateY(0px) rotate(0deg);
+        transition-duration: .2s;
+    }
+
+    [type="checkbox"]:not(checked)~#span_low{
+        transition: transform 1s linear;
+        transform: translateY(0px) rotate(0deg);
+        transition-duration: .2s;
+    }
+
+
+    nav{
+        left: -200px;
+        width: 200px;
+        padding: 0;
+        position: relative;
+        left:-200px;
+        top:70px;
+    }
+    
+    ul {
+        width: 200px;
+    }
+
+    li {
+        width: 200px;
+        height:40px;
+        background-color: black;
+        text-align: center; 
+        color:white; 
+        padding:10px;
+        box-shadow: 5px 3px 8px 2px rgba(0, 0, 0, 0.4);
+    }
+
+
+    .text1{
+        position:absolute;
+        top:10%;
+        left:34%;
+    }
+
+    .text2{
+        position:absolute;
+        top:44%;
+        left:38%;
+    }
+
+    .text3{
+        position:absolute;
+        top:76%;
+        left:38%;
+    }
+
+    .text4{
+        position:absolute;
+        top:10%;
+        left:45%;
+    }
+
+    .text5{
+        position:absolute;
+        top:45%;
+        left:43.5%;
+    }
+
+    .text6{
+        position: absolute;
+        top: 77%;
+        left: 39.5%;
+    }
+    
+    li:hover {
+        background-color: blueviolet;
+        transition-duration: 0.2s;
+    }
+
+
+    nav>ul>li>ul {
+        display: none;
+    }
+
+    li:hover ul{
+        display:block;
+        position:absolute;
+        left:110%;
+    }
+
+    #smf{
+        top:20%;
+        left:100%;
+        z-index: -1;
+    }
+
+    #smp{
+        top:40%;
+        left:100%;
+        z-index: -1;
+    }
+
+    ul>li>ul>li {
+        width: 200px;
+        background-color: rgb(66, 63, 63);
+    }
+
+    #sub3{
+        border-radius:0px 15px 0px 0px;
+    }
+
+    #sub4{
+        border-radius:0px 0px 15px 0px;
+    }
+    
+    .apple_logo{
+        position: absolute;
+        left:80.5%;
+        width:13.9%;
+        top:7%;
+        opacity: 50%;
+    }
+
+    .google_logo{
+        position: absolute;
+        left:80.8%;
+        width:13.9%;
+        top:42.5%;
+        opacity: 50%;
+    }
+
+    .microsoft_logo{
+        position: absolute;
+        left:70.7%;
+        width:34.8%;
+        top:67.9%;
+        opacity: 50%;
+    }
+
+    [type="checkbox"]:checked~nav{
+        animation-name: menu_cache;
+        animation-duration: .5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+
+    [type="checkbox"]:not(checked)~nav{
+        animation-name: menu_decoche;
+        animation-duration: .5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+
+
+    @keyframes menu_cache {
+        0%{
+            transform: translate(-200px, 0px);
+        }
+
+        100%{
+            transform: translate(200px, 0px);
+        }
+    }
+
+    @keyframes menu_decoche {
+        0%{
+            transform: translate(200px, 0px);
+        }
+
+        100%{
+            transform: translate(-200px, 0px);
+        }
+    }
+}
+
+/* visibility hidden cache l'élément mais lui garde l'espace qu'il occupait */
+/* display none cache l'élément et ne lui garde pas l'espace, si il y a d'autre éléments, ils se décaleront et prendront sa place */
+
+
